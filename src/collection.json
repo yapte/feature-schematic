@@ -5,6 +5,11 @@
       "description": "A blank schematic.",
       "factory": "./feature-schematic/index#featureSchematic",
       "schema": "./feature-schematic/schema.json"
+    },
+    "cui": {
+      "description": "Conundrum feature schematic",
+      "factory": "./cui/index#cuiSchematic",
+      "schema": "./cui/schema.json"
     }
   }
 }
