@@ -6,7 +6,7 @@ import { dasherize } from "@angular-devkit/core/src/utils/strings";
 
 // You don't have to export the function as default. You can also have more than one rule factory
 // per file.
-export function cuiSchematic(_options: SchemaOptions): Rule {
+export function lindeMini(_options: SchemaOptions): Rule {
   return chain([
     (tree: Tree, _context: SchematicContext) => tree,
     mergeWith(

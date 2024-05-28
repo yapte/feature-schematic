@@ -1,6 +1,6 @@
 import { strings } from "@angular-devkit/core";
 import { Rule, SchematicContext, Tree, apply, chain, mergeWith, move, template, url } from '@angular-devkit/schematics';
-import { SchemaOptions } from './shema-options';
+import { SchemaOptions } from './schema-options';
 import { dasherize } from "@angular-devkit/core/src/utils/strings";
 
 

@@ -4,7 +4,7 @@ import { <%= classify(name) %>Data } from '../../../data/<%= dasherize(name) %>.
 import { <%= classify(name) %>Core } from '../../../core/<%= dasherize(name) %>.core';
 
 @Component({
-    selector: 'app-<%=dasherize(name)%>.component',
+    selector: 'app-<%=dasherize(name)%>',
     templateUrl: '<%=dasherize(name)%>.component.html',
     styleUrls: ['./<%=dasherize(name)%>.component.scss'],
     providers: [

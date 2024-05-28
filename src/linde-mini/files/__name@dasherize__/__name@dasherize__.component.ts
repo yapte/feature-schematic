@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { <%= classify(name) %>Mediator } from '../../services/<%= dasherize(name) %>.mediator';
-import { <%= classify(name) %>Data } from '../../data/<%= dasherize(name) %>.data';
+import { <%= classify(name) %>Mediator } from './services/<%= dasherize(name) %>.mediator';
 
 @Component({
-    selector: 'app-<%=dasherize(name)%>',
+    selector: 'app-<%=dasherize(name)%>.component',
     templateUrl: '<%=dasherize(name)%>.component.html',
     styleUrls: ['./<%=dasherize(name)%>.component.scss'],
-    providers: [<%= classify(name) %>Mediator, <%= classify(name) %>Data],
+    providers: [<%= classify(name) %>Mediator],
 })
 export class <%= classify(name) %>Component implements OnInit {
 

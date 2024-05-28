@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "linde-mini",
+    "title": "Linde minimalistic schematic",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "minLength": 1,
+            "default": "",
+            "x-prompt": "Input the feature name"
+        },
+        "destination": {
+            "type": "string",
+            "default": "feautres",
+            "enum": [
+              "features",
+              "pages"
+            ],
+            "x-prompt": "Select the destination"
+          }
+    }
+}
