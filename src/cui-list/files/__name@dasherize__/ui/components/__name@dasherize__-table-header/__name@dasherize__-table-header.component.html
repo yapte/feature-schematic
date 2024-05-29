@@ -1,0 +1,17 @@
+<th class="checkbox-column-label" pFrozenColumn>
+  <div class="p-table-checkbox-container">
+    <p-tableHeaderCheckbox
+      *ngIf="selected$ | async as selected"
+      class="p-table-checkbox-icon"
+      [class.indeterminate]="selected.items.length > 0 && !selected.areAllSelected"
+      data-qa="p-table-select-all"
+      [disabled]="(loadingInProgress$ | async)!"
+    ></p-tableHeaderCheckbox>
+  </div>
+</th>
+<th pFrozenColumn>{{ 'COLUMN.ID' | translate }}</th>
+<th pFrozenColumn pSortableColumn="name">
+  {{ 'COLUMN.NAME' | translate }}
+  <p-sortIcon field="name"></p-sortIcon>
+</th>
+<th></th>

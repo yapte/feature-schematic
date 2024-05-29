@@ -1,0 +1,16 @@
+<td pFrozenColumn>
+  <div class="p-table-checkbox-container">
+    <p-tableCheckbox class="p-table-checkbox-icon" data-qa="<%= dasherize(name) %>-checkbox" [value]="item"></p-tableCheckbox>
+  </div>
+</td>
+<td pFrozenColumn>{{ item.id }}</td>
+<td pFrozenColumn>
+  <span [pTooltip]="item.id" cuiShowTooltipIfOverflown>{{ item.id }}</span>
+</td>
+<td class="p-table-options-column">
+  <!-- <p-menu #menu appendTo="body" [model]="list" [popup]="true"></p-menu> -->
+  <button pButton type="button" class="p-button-rounded p-button-text p-button-icon-only p-button-primary p-button-lg">
+    <!-- (click)="menu.toggle($event)" -->
+    <img src="/ui/assets/icons/more-vert.svg" alt="row options" />
+  </button>
+</td>

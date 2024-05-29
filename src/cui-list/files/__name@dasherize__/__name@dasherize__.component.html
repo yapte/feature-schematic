@@ -1,0 +1,61 @@
+<ng-container *ngIf="loading$ | async as loading">
+  <ng-container *ngIf="selected$ | async as selected">
+    <div *ngIf="!selected.items.length" class="title">{{ '<%= classify(name) %>.TITLE' | translate }}</div>
+    <cui-actions-of-checked-table-rows *ngIf="selected.items.length" [count]="selected.items.length">
+      <button
+        pButton
+        data-qa="<%= dasherize(name) %>-data"
+        class="p-button-text-brand-regular"
+        [label]="'BUTTON' | translate"
+      ></button>
+    </cui-actions-of-checked-table-rows>
+
+    <p-table
+      scrollHeight="flex"
+      cuiClassIfScrolledHorizontally="is-scrolled-horizontally"
+      [customSort]="true"
+      [value]="(list$ | async) ?? []"
+      [loading]="loading.inProgress"
+      [rows]="itemsPerPage"
+      [lazy]="true"
+      [lazyLoadOnInit]="false"
+      [rowHover]="true"
+      [scrollable]="true"
+      [virtualScroll]="true"
+      [virtualRowHeight]="48"
+      [selection]="selected.items"
+      [sortField]="initialSort.field"
+      [sortOrder]="initialSort.direction"
+      (onSort)="sort($event)"
+      (selectAllChange)="selectAllChange()"
+      (selectionChange)="selectionChange($event)"
+      (tableVirtualScrollScrolledToEnd)="fetchMore()"
+    >
+      <ng-template pTemplate="header">
+        <tr cui-<%= dasherize(name) %>-table-header></tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-item>
+        <ng-container *ngIf="!loading.inProgress">
+          <tr cui-<%= dasherize(name) %>-table-row [item]="item"></tr>
+        </ng-container>
+      </ng-template>
+
+      <ng-template pTemplate="loadingbody">
+        <tr *ngFor="let row of [].constructor(50)" class="p-table-row-disabled">
+          <td pFrozenColumn><p-skeleton styleClass="p-table-checkbox-skeleton"></p-skeleton></td>
+          <td pFrozenColumn><p-skeleton></p-skeleton></td>
+          <td><p-skeleton></p-skeleton></td>
+          <td><p-skeleton></p-skeleton></td>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="emptymessage">
+        <div *ngIf="!loading.inProgress" class="p-table__empty-content">
+          <img class="p-table__empty-content__image" src="/ui/assets/icons/no-results.svg" alt="no-results-found" />
+          {{ 'DATA_TABLE_NO_ITEMS_FOUND' | translate }}
+        </div>
+      </ng-template>
+    </p-table>
+  </ng-container>
+</ng-container>

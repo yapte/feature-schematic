@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "cui-list-schematic",
+    "title": "Feature generator",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "minLength": 1,
+            "default": "",
+            "x-prompt": "Input the feature name"
+        }
+    }
+}

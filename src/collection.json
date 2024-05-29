@@ -11,6 +11,11 @@
       "factory": "./cui/index#cuiSchematic",
       "schema": "./cui/schema.json"
     },
+    "cui-list": {
+      "description": "Conundrum feature with list schematic",
+      "factory": "./cui-list/index#cuiListSchematic",
+      "schema": "./cui-list/schema.json"
+    },
     "linde-mini": {
       "description": "Linde feature schematic",
       "factory": "./linde-mini/index#lindeMini",

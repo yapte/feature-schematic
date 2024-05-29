@@ -1,0 +1,44 @@
+@use "libs/styles/src/lib/tokens/theme-deprecated" as variables;
+@use "libs/styles/src/lib/tokens/tokens" as tokens;
+@use "libs/styles/src/lib/tokens/fonts" as fonts;
+
+// stylelint-disable selector-max-compound-selectors
+
+:host {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: tokens.$surface-1;
+
+  .title {
+    height: variables.$spacing-11;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: variables.$spacing-05;
+    padding: 0 variables.$spacing-05 0 variables.$spacing-07;
+    flex: none;
+  }
+
+  p-table::ng-deep {
+    height: 100%;
+    overflow: hidden;
+
+    .p-datatable .p-datatable-loading-overlay {
+      display: none;
+    }
+
+    .cdk-virtual-scroll-content-wrapper {
+      contain: initial;
+    }
+
+    td,
+    th {
+      &:last-child {
+        flex: none;
+        width: 80px;
+      }
+    }
+  }
+}
