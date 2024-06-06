@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { <%= classify(name) %>Mediator } from './services/<%= dasherize(name) %>.mediator';
 
 @Component({
-    selector: 'app-<%=dasherize(name)%>.component',
+    selector: 'app-<%=dasherize(name)%>',
     templateUrl: '<%=dasherize(name)%>.component.html',
     styleUrls: ['./<%=dasherize(name)%>.component.scss'],
     providers: [<%= classify(name) %>Mediator],
